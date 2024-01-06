@@ -17,7 +17,9 @@ import { fmtTokenAmount } from '@utils/formatting'
 import dayjs from 'dayjs'
 import { NextApiRequest, NextApiResponse } from 'next'
 import mainnetList from 'public/realms/mainnet-beta.json'
-export const config = { runtime: 'edge' };
+export const config = {
+  runtime: 'experimental-edge',
+};
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   if (!process.env.BACKEND_MAINNET_RPC)
     return res.status(500).json('BACKEND_MAINNET_RPC not provided in env')

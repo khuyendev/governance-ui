@@ -10,7 +10,9 @@ import { Connection, PublicKey } from '@solana/web3.js'
 
 import { NextApiRequest, NextApiResponse } from 'next'
 import { getAllSplGovernanceProgramIds } from './tools/realms'
-export const config = { runtime: 'edge' };
+export const config = {
+  runtime: 'experimental-edge',
+};
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   if (!process.env.BACKEND_MAINNET_RPC)
     return res.status(500).json('BACKEND_MAINNET_RPC not provided in env')
