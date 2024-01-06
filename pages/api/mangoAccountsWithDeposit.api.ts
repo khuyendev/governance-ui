@@ -5,7 +5,7 @@ import { withSentry } from '@sentry/nextjs'
 import { AnchorProvider } from '@coral-xyz/anchor'
 import EmptyWallet from '@utils/Mango/listingTools'
 import { MANGO_V4_ID, MangoClient } from '@blockworks-foundation/mango-v4'
-
+export const config = { runtime: 'edge' };
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
     const mint = req.query.mint

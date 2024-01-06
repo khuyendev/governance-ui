@@ -24,7 +24,7 @@ import { chunks } from '@utils/helpers'
 import { differenceInMinutes, minutesToMilliseconds } from 'date-fns'
 import { pause } from '@utils/pause'
 import { DEFAULT_NFT_VOTER_PLUGIN } from '@tools/constants'
-
+export const config = { runtime: 'edge' };
 interface CachedTokenAccounts {
   time: number
   value: TokenProgramAccount<AccountInfo>[]
