@@ -6,8 +6,12 @@ import { AnchorProvider } from '@coral-xyz/anchor'
 import EmptyWallet from '@utils/Mango/listingTools'
 import { MANGO_V4_ID, MangoClient } from '@blockworks-foundation/mango-v4'
 export const config = {
-  runtime: 'experimental-edge',
-};
+  runtime: 'experimental-edge', // for Edge API Routes only
+  unstable_allowDynamic: [
+    '/lib/utilities.js', // allows a single file
+    '/node_modules/function-bind/**', // use a glob to allow anything in the function-bind 3rd party module
+  ],
+}
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
     const mint = req.query.mint
